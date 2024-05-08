@@ -23,7 +23,6 @@
 	--ul-font-size: var(--base-font-size);
 	--blockquote-size: calc(1.2 * var(--base-font-size));
 	--strong-size: calc(1.2 * var(--base-font-size));
-	--nav-size: calc(.9 * var(--base-font-size));
 	--cite-size: calc(.8 * var(--base-font-size));
   --booknumber-size: calc(1.2 * var(--base-font-size));
 	--book-size: calc(3 * var(--base-font-size));
@@ -79,54 +78,20 @@ body{
 }
 
 
-header nav{
-  border-bottom: var(--border);
-  margin: 0 calc(-1 * var(--base-padding)); 
+header{
+	position: fixed;
+	top: 0;
+	width: 100%;
+	
+	background-color: var(--bg-section);
+
+	border-bottom: var(--border);
   padding: var(--base-padding) calc(2* var(--base-padding));
 	z-index: 3;
 }
 
-.padding_cover{
-	padding: 0 var(--base-padding) var(--space-size) var(--base-padding);
-}
+header nav{
 
-aside a[href^='#']::after { 
-	content: '\2192';
-	font-size: var(--cite-size);
-}
-
-.space{
-	padding-top: var(--space-size);
-}
-
-.space_h1{
-  padding-bottom: var(--h1-font-size);
-}
-
-h1{
-	font-family: JetBrainsMono-Light, sans-serif;
-	font-size: var(--h1-font-size);
-  line-height: var(--lh-h1);
-	text-align: center;
-
-	margin: var(--h1-font-size) 0;
-
-	width: auto; 
-
-	/* delete? */
-	-webkit-hyphens: auto;
-	hyphens: auto;
-}
-
-header > h1{
-	margin: var(--h1-font-size) 0 calc(.5 * var(--h1-font-size));
-	/* text-transform: uppercase; */
-	line-height: var(--lh-h1);
-	
-}
-.inline{
-	display: inline;
-	padding-right: calc(2* var(--spacing));
 }
 
 .smallinfo{
@@ -135,311 +100,34 @@ header > h1{
 	align-items: center;
 	flex-direction: row;
 
-	text-transform: uppercase;
-	font-family: var(--font-info); 
-	font-size: var(--nav-size);
-	line-height: var(--lh-nav)
+	font-family: 'JetBrainsMono-Light', sans-serif;
+	font-size: 16px;
 }
 
-/* info in blockquote */
-.cite{
-	color: var(--cite-color);
-	text-transform: uppercase;
-	font-family: var(--font-info); 
-	font-size: var(--cite-size);
-	line-height: var(--lh-cite)
+a{
+	text-transform: underline;
 }
 
-/*footer 에 쓰임*/
-p.smallinfo{
-	padding: var(--base-padding) 0;
-}
-
-
-
-.bookspine{
-	width: 100%;
-	height: 100vh;
-
-	border-top: var(--border);
-
-	display: flex;
-	flex-direction:column-reverse;
-	flex-wrap: nowrap;
-	writing-mode: vertical-rl;
-	
-	background-color: var(--bg-section);
-
-	z-index: 2;
-}
-
-.bookspine section {
-	border-right: var(--border);
-	padding-top: var(--base-font-size);
-
-	flex: 1;
-}
-.bookspine section:last-child{
-	border-right: none;
-}
-.bookspine section a {
-	text-align: center;
-}
-.bookspine section a span:first-child {
-	writing-mode: horizontal-tb;
+h1{
 
 }
-
-
-.book{
-  margin-top: var(--spacing);
-	font-size: var(--book-size);
-	font-family: var(--font-book); 
-}
-.booknumber{
-	font-family: var(--font-booknumber);
-	font-size: var(--booknumber-size);
-	line-height: var(--lh-booknumber);
+img{
+	border: black solid 1px;
+	width: 300px;
+	height: auto;
 }
 
-
-.section{
-	border-top: var(--border);
-	box-shadow: var(--shdw-section);
-
-	padding: var(--padding-section);
-	background-color: var(--bg-section);
-
-	display: flex;
-	flex-wrap: nowrap;
-	flex-direction: row-reverse;
-	gap: var(--gap);
-	
-}
-.section_title{
-	margin: var(--margin-section-title);
-	background-color: var(--bg-section);
-
-	border-left: var(--border);
-
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-
-	top: 0;
-	left: 0;
-}
-.rotation{
-	padding: var(--padding-section-title);
-	writing-mode: vertical-lr;
-}
-.top{
-	position: sticky;
-	top: 0;
-	background-color: var(--bg-section);
-	z-index: 1;
-}
-.btm{
-	position: sticky;
+footer {
+	position: fixed;
 	bottom: 0;
-}
-
-
-
-
-h2{
-	font-family: var(--font-h2);
-	font-size: var(--h2-font-size);
-	line-height: var(	--lh-h2);
-	margin-bottom: var(--spacing);
-
-	width: auto;
-	-webkit-hyphens: auto;
-	hyphens: auto;
-}
-
-
-
-.contents{
-	margin-right: var(--spacing);
-}
-.contents:first-child{
-	margin: 0px;
-	padding-top: 0px;
-}
-
-div .strong{
-	font-family: var(--font-strong);
-	font-size: var(--strong-size);
-	line-height: var(--lh-strong);
-	padding: var(--spacing) 0;
-	margin-bottom: var(--spacing);
-}
-
-h3{
-	font-family: var(--font-h3);
-	font-size: var(--h3-font-size);
-}
-.padding-btm{
-	padding-bottom: var(--base-padding);
-}
-
-
-ul{
-	font-family: var(--font-ul);
-
-	font-size: var(--ul-font-size);
-	line-height: calc(1.2 * var(--h2-font-size));
-
-	padding: calc( 2 * var(--spacing)) 0 calc( 2 * var(--spacing));
-	padding-inline-start: calc( 2* var(--base-font-size));
-	margin-bottom: var(--base-font-size);
-}
-
-aside .decimal{
-	margin-bottom: 0;
-}
-.decimal li {
-	padding-bottom: var(--spacing);
-}
-.decimal{
-	list-style-type: decimal;
-	text-align: left;
-}
-.square{
-	list-style-type: square;
-	text-align: left;
-}
-.longlist li{
-	padding-bottom: var(--spacing);
-
-}
-
-li:last-child{
-	padding-bottom: 0;
-}
-
-p{
-	font-family: var(--font-p);
-	font-size: var(--base-font-size);
-	line-height: var(--lh-p);
-	margin-bottom: var(--base-font-size);
-}
-
-.quote{
-	margin: calc(2 * var(--spacing)) 0;
-	padding-left: var(--spacing);
-}
-.pullquote{
-	text-align: center;
-	margin: 0;
-	padding: calc(3 * var(--spacing)) 0;
-
-
-	background-color: var(--bg-shadow);
-	box-shadow: var(--shdw-pullquote) ;
-}
-
-blockquote{
-	font-family: var(--font-blockquote);
-	font-size: var(--blockquote-size);
-	line-height: var(--lh-blockquote);
-	margin-bottom: var(--spacing);
-}
-
-
-.info{
-	font-family: var(--font-info);
-	font-size: calc(.9 * var(--base-font-size));
-	margin: var(--base-font-size) 0;
-	line-height: calc(1.2 * var(--base-font-size));
-}
-
-
-@media (min-width: 768px) {
-	:root {
-		--book-size: calc(2.5 * var(--base-font-size));
-
-		--padding-section-title: calc(1.25 * var(--spacing)) calc(.75 * var(--base-padding));
-		
-		--shdw-pullquote: inset 0 0 20em 8em var(--bg-section);
-	}
-
-	.grid{
-		display: grid;
-		grid-template-columns: 2fr 1fr;
-
-	}
-
-	body{
-		height: 100vh;
-	}
-
-	.padding_cover{
-		padding: 0 calc(3* var(--base-padding)) var(--space-size);
-	}
-
-		.bookspine{
-		height: 100vh;
-			
-		border-top: none;
-		border-bottom: none;
-
-		position: sticky;
-		top: 56px;
-	}
-	.bookspine section {
-		border-right: none;
-		border-left: var(--border);
-		border-top: none;
-
-		padding-top: var(--base-font-size);
-
-		flex: 1;
-	}
-	.top{
-		top:56px;
-	}
-
-	.contents{
-		max-width: 600px;
-		padding-right: var(--base-padding);
-	}
-}
-
-@media (min-width: 1024px) {
-	:root {
-		--base-font-size: 20px;
-		--h1-font-size: calc(3.5 * var(--base-font-size));
-
-		--lh-h1: calc(1.2 * var(--h1-font-size));
-		
-		--base-padding: 20px;
-		--spacing: calc(1.2 * var(--base-padding));
-
-
-		--shdw-pullquote: inset 0 0 30em 8em var(--bg-section);
-	}
-
-	.padding_cover{
-		padding: 0 calc(3* var(--base-padding)) var(--space-size);
-	}
-
-	.bookspine{
-		top: 67px;
-		right: 0;
-	}
-	.bookspine .article01:hover { 	
-		box-shadow: var(--shdw-article01);}
-	.bookspine .article02:hover { 	
-		box-shadow: var(--shdw-article02);}
-	.bookspine .article03:hover { 	
-		box-shadow: var(--shdw-article03);}
+	width: 100%;
 	
-	.contents{
-		padding-right: calc(3*var(--base-padding));
-	}
+	background-color: var(--bg-section);
 
+	border-bottom:  solid black 1px;
+  margin: 0 calc(-1 * var(--base-padding)); 
+  padding: var(--base-padding) calc(2* var(--base-padding));
+	z-index: 3;
 }
 
 /* Welcome to the font world */
