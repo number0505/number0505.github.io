@@ -1,80 +1,17 @@
 :root{
-	/* typeface */
-	--font-h1:'Switzer-Light';
-	--font-h2:'Switzer-Light';
-	--font-h3:'JetBrainsMono-Light';
-	--font-ul:'Switzer-Light';
-	--font-p:'Switzer-Light';
-	--font-blockquote: 'Switzer-Light';
-	--font-info:'JetBrainsMono-Light';
-  --font-booknumber:'Switzer-Light';
-	--font-book:'Switzer-Light';
-	--font-strong: 'Switzer-Regular';
 
+	--bg-section: 
 
-	/* font weight */
-	--strong-weight: 900;
-
-	/* font size */
-	--base-font-size: 18px;
-	--h1-font-size: calc(3 * var(--base-font-size));
-	--h2-font-size: calc(1.4 * var(--base-font-size));
-	--h3-font-size: calc(.8 * var(--base-font-size));
-	--ul-font-size: var(--base-font-size);
-	--blockquote-size: calc(1.2 * var(--base-font-size));
-	--strong-size: calc(1.2 * var(--base-font-size));
-	--cite-size: calc(.8 * var(--base-font-size));
-  --booknumber-size: calc(1.2 * var(--base-font-size));
-	--book-size: calc(3 * var(--base-font-size));
-
-	/* line height */
-	--lh-h1: calc(1 * var(--h1-font-size));
-	--lh-h2: calc(1.6 * var(--h2-font-size));
-	--lh-p: calc(1.8  * var(--base-font-size));
-	--lh-strong: calc(1.7 * var(--strong-size));
-
-	--lh-booknumber: calc(1 * var(--booknumber-size));
-	--lh-book: calc(1.37 * var(--book-size));
-	--lh-nav: calc(1.45 * var(--nav-size));
-	--lh-blockquote: calc(1.7 * var(--blockquote-size));
-	--lh-cite: calc(1.45 * var(--cite-size));
-
-	/* margin, padding */
-	--base-padding: 16px;
-	--space-size: 40px;
-	--gap: 10px;
-	--spacing: calc(1.3 * var(--base-padding));
-	--padding-section: calc(3 * var(--spacing)) calc(var(--cite-size) + var(--base-padding)) calc(3 * var(--spacing)) var(--base-padding) ;
-	--padding-section-title: calc(1.25 * var(--spacing)) var(--base-padding) calc(1.25 * var(--spacing)) calc(.5 * var(--base-padding));
-	--padding-top: var(--base-padding) var(--base-padding) calc(1.25 * var(--spacing)) calc(.5 * var(--base-padding));
-	--margin-section-title: calc( -3 * var(--spacing)) calc( -1 * (var(--cite-size) + var(--base-padding))) calc(-2 * var(--spacing)) calc( -1 * var(--spacing));
-
-	/*line*/
-	--border: solid black 1px;
-
-	/*color*/
-	--bg-01: rgb(234, 186, 134);
-	--bg-02: #B3ABF5;
-	--bg-03: rgb(132, 205, 207);	
-	--bg-section: rgb(243, 240, 232);
-	--cite-color: gray;
-
-	--shdw-section: 0 0 30px var(--bg-shadow);
-	--shdw-article01: 0 0 30px var(--bg-01);
-	--shdw-article02: 0 0 30px var(--bg-02);
-	--shdw-article03: 0 0 30px var(--bg-03);
-
-	--shdw-pullquote: inset 0 0 10em 7em var(--bg-section);
 
 }
 
 
 
 main{
-	margin-top: calc(var(--cite-size) + var(--base-padding) + var(--base-padding));
+	margin: 60px;
 }
 body{
-	background-color: var(--bg-section);
+	background-color: rgb(243, 240, 232);
 }
 
 
@@ -83,16 +20,13 @@ header{
 	top: 0;
 	width: 100%;
 	
-	background-color: var(--bg-section);
+	background-color: rgb(243, 240, 232);
 
-	border-bottom: var(--border);
-  padding: var(--base-padding) calc(2* var(--base-padding));
+	border-bottom: solid black 1px;
+  padding: 16px 40px;
 	z-index: 3;
 }
 
-header nav{
-
-}
 
 .smallinfo{
 	display: flex;
@@ -100,33 +34,42 @@ header nav{
 	align-items: center;
 	flex-direction: row;
 
-	font-family: 'JetBrainsMono-Light', sans-serif;
+	font-family: 'JetBrainsMono-Light', monospace;
 	font-size: 16px;
 }
 
-a{
-	text-transform: underline;
+a:hover{
+	color: blue;
+	transition: color 0.2s ease;
+}
+
+img:hover{
+	box-shadow: 0 0 10px rgba(0, 0, 255);
+	transition: color 0.5s ease;
 }
 
 h1{
-
+	font-family: 'Switzer-Light', sans-serif;
+	text-transform: uppercase;
+	padding: 16px 0;
 }
 img{
 	border: black solid 1px;
-	width: 300px;
+	width: 600px;
 	height: auto;
 }
 
+ol{
+	text-align: center;
+}
 footer {
 	position: fixed;
 	bottom: 0;
 	width: 100%;
 	
-	background-color: var(--bg-section);
-
-	border-bottom:  solid black 1px;
-  margin: 0 calc(-1 * var(--base-padding)); 
-  padding: var(--base-padding) calc(2* var(--base-padding));
+	background-color: rgb(243, 240, 232);
+	border-top:  solid black 1px;
+  padding: 16px 40px;
 	z-index: 3;
 }
 
